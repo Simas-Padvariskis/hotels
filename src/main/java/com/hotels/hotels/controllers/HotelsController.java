@@ -54,12 +54,12 @@ public class HotelsController {
         List<HotelResponseDTO> hotels;
 
         if (isUser) {
-            hotels = hotelsService.getHotelsByUser() // Only user's hotels
+            hotels = hotelsService.getHotelsByUser() 
                     .stream()
                     .map(HotelMapper::toResponseDTO)
                     .collect(Collectors.toList());
         } else {
-            hotels = hotelsService.findAll() // All hotels or public subset
+            hotels = hotelsService.findAll()
                     .stream()
                     .map(HotelMapper::toResponseDTO)
                     .collect(Collectors.toList());
